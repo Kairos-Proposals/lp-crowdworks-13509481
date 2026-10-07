@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | ichi778様 集客LP制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#FF6B6B;
+    --turq:#3FCBC4;
+    --yellow:#FFD166;
+    --navy:#1C2541;
+    --cloud:#F6F9FC;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--navy);
+    background:var(--cloud);
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.logo{
+    font-family:'Zen Maru Gothic',sans-serif;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== header ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,249,252,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(28,37,65,0.08);
+  }
+  header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .logo{
+    font-weight:900; font-size:1.3rem;
+    letter-spacing:0.05em;
+  }
+  .logo span{color:var(--coral);}
+  .header-badge{
+    font-size:0.75rem;
+    background:var(--navy);
+    color:var(--white);
+    padding:6px 14px;
+    border-radius:999px;
+    font-weight:700;
+  }
+
+  /* ===== hero ===== */
+  .hero{
+    position:relative;
+    padding:80px 0 100px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,107,107,0.18), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(63,203,196,0.22), transparent 45%),
+      radial-gradient(circle at 70% 90%, rgba(255,209,102,0.25), transparent 40%);
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-tag{
+    display:inline-block;
+    font-size:0.8rem;
+    font-weight:700;
+    background:var(--white);
+    border:2px solid var(--coral);
+    color:var(--coral);
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:24px;
+  }
+  .hero h1{
+    font-size:clamp(2rem, 4.2vw, 3rem);
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:20px;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(transparent 60%, var(--yellow) 60%);
+  }
+  .hero p.lead{
+    font-size:1.02rem;
+    color:#3a4566;
+    max-width:48ch;
+    margin-bottom:32px;
+  }
+  .hero .cta-row{
+    display:flex; gap:16px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:16px 30px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.95rem;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{
+    background:var(--coral);
+    color:var(--white);
+    box-shadow:0 10px 24px rgba(255,107,107,0.35);
+  }
+  .btn-primary:hover{ transform:translateY(-3px); }
+  .btn-outline{
+    border:2px solid var(--navy);
+    color:var(--navy);
+  }
+  .btn-outline:hover{ background:var(--navy); color:var(--white); }
+
+  /* phone mockup */
+  .phone-stage{
+    position:relative;
+    display:flex;
+    justify-content:center;
+  }
+  .phone{
+    width:230px;
+    height:460px;
+    background:var(--navy);
+    border-radius:38px;
+    padding:12px;
+    box-shadow:0 30px 60px rgba(28,37,65,0.35);
+    position:relative;
+    transform:rotate(-4deg);
+  }
+  .phone::before{
+    content:"";
+    position:absolute;
+    top:20px; left:50%;
+    transform:translateX(-50%);
+    width:70px; height:8px;
+    background:#0d1326;
+    border-radius:999px;
+  }
+  .phone-screen{
+    width:100%; height:100%;
+    background:
+      linear-gradient(180deg, var(--coral) 0%, var(--coral) 28%, var(--white) 28%);
+    border-radius:26px;
+    overflow:hidden;
+    position:relative;
+  }
+  .phone-screen .block1{
+    position:absolute; top:40px; left:16px; right:16px;
+    color:white; font-weight:700; font-size:0.85rem;
+  }
+  .phone-screen .block2{
+    position:absolute; top:135px; left:16px; right:16px;
+    height:60px;
+    background:var(--yellow);
+    border-radius:14px;
+  }
+  .phone-screen .block3{
+    position:absolute; top:205px; left:16px; right:16px;
+    height:90px;
+    background:var(--cloud);
+    border:2px dashed var(--turq);
+    border-radius:14px;
+  }
+  .phone-screen .block4{
+    position:absolute; bottom:24px; left:16px; right:16px;
+    height:46px;
+    background:var(--navy);
+    border-radius:999px;
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-size:0.78rem; font-weight:700;
+  }
+  .floaty{
+    position:absolute;
+    border-radius:50%;
+  }
+  .floaty.a{ width:70px; height:70px; background:var(--turq); opacity:.5; top:10px; right:-10px;}
+  .floaty.b{ width:40px; height:40px; background:var(--yellow); opacity:.7; bottom:30px; left:-20px;}
+
+  /* ===== section titles ===== */
+  .section-tag{
+    font-size:0.8rem;
+    font-weight:700;
+    color:var(--turq);
+    letter-spacing:0.12em;
+    margin-bottom:10px;
+    text-transform:uppercase;
+  }
+  .section-title{
+    font-size:clamp(1.5rem,3vw,2.1rem);
+    font-weight:900;
+    margin-bottom:20px;
+  }
+
+  /* ===== understanding ===== */
+  .understand{
+    padding:90px 0;
+    background:var(--white);
+  }
+  .understand .wrap{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  .understand-card{
+    background:var(--cloud);
+    border-radius:24px;
+    padding:36px;
+    position:relative;
+  }
+  .understand-card p{
+    color:#3a4566;
+    margin-bottom:16px;
+  }
+  .ref-list{
+    display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;
+  }
+  .ref-chip{
+    background:var(--white);
+    border:1px solid rgba(28,37,65,0.1);
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--navy);
+  }
+  .ref-chip::before{
+    content:"▸ ";
+    color:var(--coral);
+  }
+
+  /* ===== value cards ===== */
+  .values{
+    padding:90px 0;
+    background:
+      linear-gradient(180deg, var(--cloud) 0%, var(--cloud) 100%);
+  }
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:24px;
+    margin-top:36px;
+  }
+  .value-card{
+    background:var(--white);
+    border-radius:20px;
+    padding:30px 26px;
+    border-top:6px solid var(--coral);
+    box-shadow:0 10px 30px rgba(28,37,65,0.06);
+    transition:transform .25s ease;
+  }
+  .value-card:nth-child(2){ border-top-color:var(--turq); }
+  .value-card:nth-child(3){ border-top-color:var(--yellow); }
+  .value-card:nth-child(4){ border-top-color:var(--coral); }
+  .value-card:nth-child(5){ border-top-color:var(--turq); }
+  .value-card:hover{ transform:translateY(-6px); }
+  .value-num{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:1.6rem;
+    font-weight:900;
+    color:rgba(28,37,65,0.15);
+    margin-bottom:8px;
+  }
+  .value-card h3{
+    font-size:1.08rem;
+    margin-bottom:10px;
+  }
+  .value-card p{
+    font-size:0.92rem;
+    color:#4a5476;
+  }
+
+  /* ===== schedule ===== */
+  .schedule{
+    padding:90px 0;
+    background:var(--navy);
+    color:var(--white);
+  }
+  .schedule .section-tag{ color:var(--yellow); }
+  .timeline{
+    margin-top:44px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .t-item{
+    display:grid;
+    grid-template-columns:60px 1fr;
+    gap:20px;
+    position:relative;
+    padding-bottom:44px;
+  }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-dot{
+    width:52px; height:52px;
+    border-radius:50%;
+    background:var(--coral);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900;
+    font-size:1.1rem;
+    color:var(--white);
+    z-index:2;
+  }
+  .t-item:nth-child(2) .t-dot{ background:var(--turq); }
+  .t-item:nth-child(3) .t-dot{ background:var(--yellow); color:var(--navy); }
+  .t-item:nth-child(4) .t-dot{ background:var(--coral); }
+  .t-item:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left:26px; top:52px;
+    width:2px; height:calc(100% - 20px);
+    background:rgba(255,255,255,0.2);
+  }
+  .t-content h3{
+    font-size:1.1rem;
+    margin-bottom:6px;
+  }
+  .t-content p{
+    color:rgba(255,255,255,0.75);
+    font-size:0.92rem;
+  }
+  .t-content .t-period{
+    display:inline-block;
+    font-size:0.72rem;
+    background:rgba(255,255,255,0.12);
+    padding:3px 12px;
+    border-radius:999px;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+
+  /* ===== closing ===== */
+  .closing{
+    padding:100px 0 110px;
+    text-align:center;
+    position:relative;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,107,107,0.15), transparent 50%),
+      radial-gradient(circle at 75% 70%, rgba(63,203,196,0.2), transparent 50%);
+  }
+  .closing h2{
+    font-size:clamp(1.6rem,3.6vw,2.4rem);
+    font-weight:900;
+    margin-bottom:18px;
+  }
+  .closing p{
+    color:#3a4566;
+    max-width:46ch;
+    margin:0 auto 36px;
+  }
+  .closing .btn-primary{
+    font-size:1.05rem;
+    padding:18px 42px;
+  }
+  .mini-note{
+    margin-top:22px;
+    font-size:0.82rem;
+    color:#6a7390;
+  }
+
+  footer{
+    padding:30px 0;
+    text-align:center;
+    font-size:0.8rem;
+    color:#8089a6;
+    background:var(--white);
+  }
+
+  @media (max-width:860px){
+    .hero .wrap{
+      grid-template-columns:1fr;
+    }
+    .phone-stage{ order:-1; margin-bottom:10px; }
+    .phone{ transform:rotate(0deg); width:200px; height:400px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Kairos<span>.</span></div>
+    <div class="header-badge">ご提案書 / for ichi778様</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="hero-tag">Kairos からのご提案</span>
+      <h1>指が止まる。<br>心が動く。<br class="only-mobile"><span class="accent">それが「伝わる」LP</span>です。</h1>
+      <p class="lead">
+        20〜40代のスマホユーザーが、思わず最後までスクロールしてしまう。
+        明るく親しみやすいのに、ちゃんと問い合わせにつながる。
+        そんな集客LPを、デザイン・素材・構成までまるごとお作りします。
+      </p>
+      <div class="cta-row">
+        <a href="#closing" class="btn btn-primary">オンラインでお話を聞く</a>
+        <a href="#values" class="btn btn-outline">できることを見る</a>
+      </div>
+    </div>
+    <div class="phone-stage">
+      <div class="floaty a"></div>
+      <div class="floaty b"></div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="block1">あなたの毎日が、<br>ちょっと変わる。</div>
+          <div class="block2"></div>
+          <div class="block3"></div>
+          <div class="block4">今すぐ無料相談 ＞</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="understand">
+  <div class="wrap">
+    <span class="section-tag">Understanding</span>
+    <h2 class="section-title">今回のご依頼、こう受け止めています。</h2>
+    <div class="understand-card">
+      <p>
+        「集客用のLPを作りたい。でもただ綺麗なだけじゃダメ。ターゲットは20〜40代、
+        見るのはほぼスマホ。だからこそ、最初の3秒で"自分ごと"と思ってもらえる
+        明るく親しみやすい雰囲気が必要」——募集内容から、そんな想いを感じ取りました。
+      </p>
+      <p>
+        ご提示いただいた参考サイト（SHIFT AI／AI GATE）は、いずれも
+        「読ませる」のではなく「感覚的に伝わる」構成で、テンポよくスクロールしながら
+        自然と行動（登録・問い合わせ）に導く設計になっています。
+        Kairosでは、このテンポ感と温度感をそのまま再現しつつ、
+        ichi778様のサービスらしさを上乗せしたLPをご提案します。
+      </p>
+      <div class="ref-list">
+        <span class="ref-chip">モバイルファースト設計</span>
+        <span class="ref-chip">明るい配色・丸みのある親しみやすさ</span>
+        <span class="ref-chip">スクロール誘導型の構成</span>
+        <span class="ref-chip">文章・素材もまるごと相談OK</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values" id="values">
+  <div class="wrap">
+    <span class="section-tag">What we offer</span>
+    <h2 class="section-title">Kairos が提供できる価値</h2>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>スマホで"見る前提"のデザイン</h3>
+        <p>親指の動き・画面の見え方を前提に、情報の出し方・余白・文字サイズを設計。PC版は後から最適化できます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>構成・コピーも一緒に考案</h3>
+        <p>「何をどの順番で伝えるか」から相談可能。参考LPの構成力を踏まえ、離脱を防ぐストーリー設計をご提案します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>素材・アイキャッチも内製対応</h3>
+        <p>アイコンやイラスト調の装飾、バナー素材などもあわせて制作。外部発注なしで一気通貫に進められます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>20〜40代に届く"明るさ"の調整</h3>
+        <p>堅すぎず、軽すぎない温度感。信頼感と親しみやすさのバランスを、配色・書体・写真トーンで細かく調整します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">05</div>
+        <h3>継続を見据えたスピード対応</h3>
+        <p>単発で終わらせず、改善・追加施策・次のLPまで見据えたご相談を歓迎。末長くお付き合いさせてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schedule">
+  <div class="wrap">
+    <span class="section-tag">Flow</span>
+    <h2 class="section-title">進め方のイメージ</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-dot">1</div>
+        <div class="t-content">
+          <span class="t-period">まずはここから</span>
+          <h3>オンラインヒアリング</h3>
+          <p>サービス内容・ターゲット・訴求ポイントを伺いながら、方向性をすり合わせます。ポートフォリオもこの場でご共有します。</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot">2</div>
+        <div class="t-content">
+          <span class="t-period">構成・見積確定</span>
+          <h3>構成案 & お見積り提示</h3>
+          <p>ページ構成（ワイヤー）と概算見積りをご提示。金額感も含めてすり合わせたうえで契約へ進みます。</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot">3</div>
+        <div class="t-content">
+          <span class="t-period">制作期間</span>
+          <h3>デザイン・素材制作</h3>
+          <p>モバイル優先でデザインを作成。進行中もラフ段階で共有し、認識のズレを防ぎながら進めます。</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot">4</div>
+        <div class="t-content">
+          <span class="t-period">仕上げ</span>
+          <h3>修正・納品</h3>
+          <p>フィードバックを反映し、最終データを納品。公開後の軽微な調整もご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="closing">
+  <div class="wrap">
+    <h2>まずは、気軽にお話ししませんか。</h2>
+    <p>
+      金額・納期・デザインの方向性、すべてオンラインでのすり合わせから。
+      過去制作したLPのポートフォリオもご用意してご連絡します。
+    </p>
+    <a href="#" class="btn btn-primary">Kairosに相談してみる</a>
+    <div class="mini-note">※ まずはご提案・お見積りから。お気軽にご連絡ください。</div>
+  </div>
+</section>
+
+<footer>
+  © Kairos — Web制作・システム開発チーム
+</footer>
+
+</body>
+</html>
